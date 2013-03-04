@@ -8,7 +8,7 @@
 
 		<link rel="stylesheet" type="text/css" href="assets/css/common.css">
 		<style type="text/css">
-		body { overflow: hidden; }
+		body { overflow: hidden; text-align: center }
 		.group {
 			padding: 30px;
 			display: inline-block;
@@ -16,6 +16,7 @@
 		.cube {
 			width: 200px;
 			height: 200px;
+			opacity: .9;
 		}
 		.cube div {
 			border: 10px solid;
@@ -31,6 +32,12 @@
 		.label {
 			width: 208px;
 			height: 208px;
+			text-align: right;
+			font-size: 40px;
+			line-height: 30px;
+		}
+		.label i {
+			font-size: 25px;
 		}
 		.girl-label {
 			background: url(assets/img/woman.png);
@@ -43,6 +50,7 @@
 
 	</head>
 	<body>
+		<h1>Gender repartition</h1>
 		<script type="text/javascript" src="assets/js/RequestAnimationFrame.js"></script>
 		<script type="text/javascript" src="assets/js/Sprite3D.js"></script>
 		<script type="text/javascript" src="assets/js/getData.js"></script>
@@ -65,6 +73,7 @@ function showData() {
 				.create(".label boy-label")
 				.x( 50 )
 				.y( -boys*.5 - 220 )
+				.html(boys+"<br><i>"+Math.round(boys/numData*100)+"%</i>")
 				.update()
 		),
 		cubeGirl = container.appendChild(
@@ -79,9 +88,12 @@ function showData() {
 				.create(".label girl-label")
 				.x( -250 )
 				.y( -girls*.5 - 220 )
+				.html(girls+"<br><i>"+Math.round(girls/numData*100)+"%</i>")
 				.update()
 		);
 
+	stage.perspective(500);
+	container.rotationX(-20).update();
 	requestAnimationFrame(move);
 
 	function move(){
