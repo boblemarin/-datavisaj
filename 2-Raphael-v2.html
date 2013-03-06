@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name='HandheldFriendly' content='True' />
+		
+		<title>#datavisaj - Raphael v1</title>
+
+		<link rel="stylesheet" type="text/css" href="assets/css/common.css">
+		<style type="text/css">
+
+		html, body {
+			height: 100%;
+			text-align: center;
+		}
+		* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+		#star {
+			cursor: pointer;
+			-webkit-transition: all .1s ease-out;
+		}
+		#star:hover {
+			opacity: .5;
+		}
+
+		</style>
+
+	</head>
+	<body>
+
+		<!-- jquery, histoire de s'amuser -->
+		<script type="text/javascript" src="assets/js/jquery-1.9.1.min.js"></script>
+
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="800px" height="600px" viewBox="0 0 800 600" enable-background="new 0 0 800 600" xml:space="preserve">
+<rect x="254.868" y="176.388" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="85.951" height="127.273"/>
+<rect x="371.396" y="176.388" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" width="73.554" height="169.421"/>
+<polygon id="hexa" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" points="201.975,303.661 149.413,309.577 
+	118.008,267.015 139.166,218.537 191.728,212.621 223.133,255.183 "/>
+<polygon id="star" fill="#BE4D9C" stroke="#000000" stroke-miterlimit="10" points="386.272,281.347 368.5,395.385 452.366,474.676 
+	338.417,493.012 288.924,597.275 236.272,494.57 121.818,479.719 203.226,397.906 181.982,284.464 284.947,336.606 "/>
+</svg>
+
+
+		<!-- faire le travail -->
+		<script type="text/javascript">
+		$(function(){
+			$("#hexa").click(function(){
+				this.attributes.fill.value = "#FF0000";
+			});
+		});
+		</script>
+
+	</body>
+</html>

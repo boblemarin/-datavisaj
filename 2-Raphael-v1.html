@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name='HandheldFriendly' content='True' />
+		
+		<title>#datavisaj - Raphael v1</title>
+
+		<link rel="stylesheet" type="text/css" href="assets/css/common.css">
+		<style type="text/css">
+
+		html, body {
+			height: 100%;
+			text-align: center;
+		}
+		* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+		</style>
+
+	</head>
+	<body>
+		<h1>Le mélange des genres</h1>
+		<!-- element qui contiendra la visualisation -->
+		<div id="container"></div>
+
+
+		<!-- inclure raphael et un supplément pour les pie charts-->
+		<script type="text/javascript" src="assets/js/raphael-min.js"></script>
+		<script type="text/javascript" src="assets/js/raphael.pieChart.js"></script>
+
+		<!-- faire le travail -->
+		<script type="text/javascript">
+
+
+    var values = [959,406],
+        labels = ["garçons","filles"];
+
+    Raphael("container", 700, 700).pieChart(350, 350, 200, values, labels, "#fff");
+
+		</script>
+
+	</body>
+</html>
